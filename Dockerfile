@@ -13,7 +13,8 @@ RUN wget --progress=dot:mega https://repo.continuum.io/miniconda/Miniconda3-late
 
 ENV PATH /usr/local/conda3/bin:$PATH
 
-RUN echo 'export PATH=/usr/local/conda3/bin:$PATH' >> /etc/profile.d/pynn.sh
+RUN echo 'export PATH=/usr/local/conda3/bin:$PATH' >> /etc/profile.d/pynn.sh \
+        && ln -sf /usr/local/conda3/etc/profile.d/conda.sh /etc/profile.d/
 
 # Install pytorch
 # See: https://pytorch.org/get-started/locally/
