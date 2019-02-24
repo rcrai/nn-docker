@@ -1,4 +1,5 @@
-FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 as builder
+# FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 as builder
+FROM registry.cn-beijing.aliyuncs.com/recurrent/tensorrt:9-devel-ubuntu16.04 as builder
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
@@ -27,7 +28,7 @@ RUN conda install --yes pytorch torchvision cudatoolkit=9.0 -c pytorch \
 COPY environment.yml /
 RUN conda env update
 
-FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
+FROM registry.cn-beijing.aliyuncs.com/recurrent/tensorrt:9-devel-ubuntu16.04
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
