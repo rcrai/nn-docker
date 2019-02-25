@@ -28,13 +28,3 @@ RUN conda install --yes pytorch torchvision cudatoolkit=9.0 -c pytorch \
 COPY environment.yml /
 RUN conda env update
 
-FROM registry.cn-beijing.aliyuncs.com/recurrent/tensorrt:9-devel-ubuntu16.04
-
-ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
-
-ENV PATH /usr/local/conda3/bin:$PATH
-
-COPY --from=builder /etc/profile.d /etc/profile.d
-
-COPY --from=builder /usr/local/conda3 /usr/local/conda3
-
