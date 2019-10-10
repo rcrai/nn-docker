@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  base:
+    build: .
+    restart: always
+    volumes:
+      - ./:/src
+    environment:
+      CONTAINER: docker

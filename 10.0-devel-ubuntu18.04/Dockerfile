@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 as builder
+FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04 as builder
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
