@@ -20,9 +20,11 @@ RUN echo 'export PATH=/usr/local/conda3/bin:$PATH' >> /etc/profile.d/pynn.sh \
 
 # Install pytorch
 # See: https://pytorch.org/get-started/locally/
-RUN conda install --yes pytorch torchvision cudatoolkit=9.0 -c pytorch \
-        && pip --no-cache-dir install https://github.com/kpu/kenlm/archive/master.zip
+# RUN conda install --yes pytorch torchvision cudatoolkit=9.0 -c pytorch \
+#        && pip --no-cache-dir install https://github.com/kpu/kenlm/archive/master.zip
 
+RUN pip --no-cache-dir install https://github.com/kpu/kenlm/archive/master.zip
+        
 # 
 COPY environment.yml /
 RUN conda env update
